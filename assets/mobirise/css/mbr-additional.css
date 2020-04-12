@@ -2715,3 +2715,252 @@ a {
 .cid-rVjZ4kuELS .btn-line {
   margin-top: 3rem;
 }
+.cid-rVV3SaisU1 {
+  background-image: url("../../../assets/images/background10.jpg");
+}
+.cid-rVV3SaisU1 .slider-text-two {
+  background: rgba(255, 255, 255, 0.8) none repeat scroll 0 0;
+  outline: 1px solid rgba(0, 0, 0, 0.2);
+  outline-offset: -15px;
+  padding: 65px 50px;
+}
+.cid-rVV3SaisU1 .mbr-section-title {
+  color: #232323;
+}
+.cid-rVV3SaisU1 .mbr-text {
+  color: #232323;
+  letter-spacing: 5px;
+  font-weight: 100;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .cid-rVV3SaisU1 .slider-text-two {
+    outline: 15px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
+.cid-rVV3TYU5MD {
+  overflow-x: hidden !important;
+}
+.cid-rVV3TYU5MD,
+.cid-rVV3TYU5MD .scroll-wrapper {
+  padding-top: 225px;
+  padding-bottom: 225px;
+}
+.cid-rVV3TYU5MD .mbr-section-title {
+  color: #ffffff;
+}
+.cid-rVV3TYU5MD .mbr-section-title span {
+  color: #b1976b;
+}
+.cid-rVV3TYU5MD .mbr-text {
+  color: #efefef;
+  letter-spacing: 5px;
+  font-weight: 100;
+}
+.cid-rVV3TYU5MD .scroll-wrapper {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+  position: absolute;
+  background-repeat: repeat;
+  z-index: 0;
+  -webkit-animation-duration: 30s !important;
+  animation-duration: 30s;
+  background-image: url("../../../assets/images/background101.jpg");
+  -webkit-animation: scroll-wrapper linear infinite;
+  -moz-animation: scroll-wrapper linear infinite;
+  -o-animation: scroll-wrapper linear infinite;
+  animation: scroll-wrapper linear infinite;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.cid-rVV3TYU5MD .scroll-wrapper.second {
+  left: calc(100% - 1px);
+}
+.cid-rVV3TYU5MD .mbr-overlay {
+  z-index: 1;
+}
+.cid-rVV3TYU5MD .block-content {
+  z-index: 2;
+}
+@keyframes scroll-wrapper {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes scroll-wrapper {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+@-moz-keyframes scroll-wrapper {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+@-o-keyframes scroll-wrapper {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+.cid-rVV4bMCctS {
+  padding-top: 270px;
+  padding-bottom: 270px;
+  background-image: url("../../../assets/images/attorney1.jpg");
+}
+.cid-rVV4bMCctS .mbr-section-title {
+  font-family: 'Comfortaa', display;
+}
+.cid-rVV4bMCctS .promo-primary-description {
+  position: absolute;
+  bottom: 0rem;
+  width: 100%;
+  text-align: right;
+}
+.cid-rVV4bMCctS .mbr-section-subtitle {
+  margin-bottom: 1rem;
+  font-family: 'Comfortaa', display;
+}
+.cid-rVV4bMCctS .container::before {
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  bottom: -35px;
+  width: 75px;
+  left: 16px;
+  background-color: #c1f7d5;
+}
+.cid-rVV4bMCctS .container::after {
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  width: 25px;
+  left: 96px;
+  background-color: #aca7ba;
+  bottom: -35px;
+}
+@media (max-width: 992px) {
+  .cid-rVV4bMCctS .promo-primary-description {
+    padding-right: 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .cid-rVV4bMCctS .bottom-title {
+    margin-right: 9rem;
+    font-size: 150px;
+  }
+}
+.cid-rVV4bMCctS .bottom-title {
+  letter-spacing: 0px;
+}
+.cid-rVV4bMCctS .mbr-section-btn {
+  margin-top: 1.8rem;
+}
+.cid-rVV4bMCctS .btn-primary-outline {
+  color: #ffffff !important;
+}
+.cid-rVV4bMCctS .btn {
+  margin-left: 0rem;
+  margin-right: 1rem;
+}
+.cid-rVV44vjzgT {
+  background-image: url("../../../assets/images/mcdonald-lake-glacier-national-park-montana.jpg");
+}
+.cid-rVV44vjzgT .btn {
+  padding: 10px 15px 10px 15px;
+  font-weight: bold;
+}
+.cid-rVV44vjzgT .mbr-section-title {
+  letter-spacing: .1em;
+}
+.cid-rVV44vjzgT .icon-description {
+  padding-top: 1rem;
+  color: #ffffff;
+}
+.cid-rVV44vjzgT .mbr-media {
+  height: 70px;
+}
+.cid-rVV44vjzgT .mbr-media span {
+  font-size: 48px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  line-height: 6rem;
+  position: relative;
+  display: inline-block;
+  transition: all 0.25s;
+  color: white;
+}
+.cid-rVV44vjzgT .mbr-media span:hover {
+  opacity: 0.7;
+}
+.cid-rVV44vjzgT .mbr-media span.mbri-play:before {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-35%);
+  -moz-transform: translateX(-35%);
+  -ms-transform: translateX(-35%);
+  -o-transform: translateX(-35%);
+  transform: translateX(-35%);
+}
+.cid-rVV44vjzgT .modalWindow {
+  position: fixed;
+  z-index: 5000;
+  left: 0;
+  top: 0;
+  background-color: rgba(61, 61, 61, 0.65);
+  width: 100%;
+  height: 100%;
+}
+.cid-rVV44vjzgT .modalWindow .modalWindow-container {
+  display: table-cell;
+  vertical-align: middle;
+}
+.cid-rVV44vjzgT .modalWindow .modalWindow-video {
+  height: 44.9943757vw;
+  width: 80vw;
+  margin: 0 auto;
+}
+.cid-rVV44vjzgT a.close {
+  position: absolute;
+  right: 4vw;
+  top: 4vh;
+  color: #ffffff;
+  z-index: 5000000;
+  font-size: 37px;
+  background: #000;
+  padding: 20px;
+  border-radius: 50%;
+}
+.cid-rVV44vjzgT a.close:hover {
+  color: #ffffff;
+}
+.cid-rVV44vjzgT .mbr-text,
+.cid-rVV44vjzgT .mbr-section-btn {
+  color: #efefef;
+}
