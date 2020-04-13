@@ -988,191 +988,6 @@
           "_params": {}
         },
         {
-          "_name": "social01",
-          "_styles": {
-            "& when not (@fullScreen)": {
-              "padding-top": "(@paddingTop * 15px)",
-              "padding-bottom": "(@paddingBottom * 15px)"
-            },
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value",
-              "& when (@gradientBg)": {
-                "background": "linear-gradient(45deg, @bg-value, @color2)"
-              }
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            "img": {
-              "width": "100%",
-              "height": "130px",
-              "object-fit": "cover"
-            },
-            ".img-wrap span": {
-              "position": "absolute",
-              "top": "50%",
-              "left": "50%",
-              "transform": "translate(-50%, -50%)",
-              "color": "@icons",
-              "opacity": "0",
-              "transition": "all 0.3s",
-              "cursor": "pointer"
-            },
-            ".img-wrap": {
-              "overflow": "hidden",
-              "display": "flex",
-              "justify-content": "center",
-              "position": "relative",
-              "&:before": {
-                "content": "''",
-                "position": "absolute",
-                "transition": "all 0.3s",
-                "pointer-events": "none",
-                "width": "100%",
-                "height": "100%",
-                "left": "0",
-                "top": "0",
-                "background": "black",
-                "opacity": "0"
-              },
-              "&:hover": {
-                "&:before": {
-                  "opacity": "0.2"
-                },
-                "span": {
-                  "opacity": "1"
-                }
-              }
-            },
-            "@media (min-width: 992px)": {
-              ".col-lg-x": {
-                "flex": "0 0 12.5%",
-                "max-width": "12.5%"
-              }
-            },
-            ".item": {
-              "padding": "0.5rem"
-            },
-            "@media (max-width: 767px)": {
-              ".item": {
-                "padding": "0.5rem"
-              },
-              ".row": {
-                "padding": "0 0.5rem"
-              }
-            },
-            ".btn": {
-              "border-radius": "0"
-            },
-            ".mbr-iconfont": {
-              "font-size": "1rem!important"
-            }
-          },
-          "_customHTML": "<section class=\"header3\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"3\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"3\" condition=\"fullScreen == false\">\n        <input type=\"color\" name=\"icons\" title=\"Icons Color\" value=\"#ffffff\" selected>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/background1.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#767676\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n\n        <input type=\"checkbox\" title=\"Gradient\" name=\"gradientBg\" condition=\"bg.type == 'color'\">\n        <input type=\"color\" title=\"Color 2\" name=\"color2\" value=\"#000000\" condition=\"gradientBg && bg.type == 'color'\">\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-center pb-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-sm btn-black\" href=\"https://mobirise.co\" data-app-placeholder=\"Type Text\"><span class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>FOLLOW US</a></div>\n        <div class=\"row mbr-jc-c\">\n\n\n\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/01.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/02.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/03.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-1-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-254x381.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-254x353.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-2-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-7-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-6-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-1-254x381.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-5-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-254x146.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-4-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-3-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-254x172.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n\n        </div>\n    </div>\n\n</section>",
-          "_anchor": "social01-c",
-          "_isUserblock": true,
-          "_sourceTheme": "photom4",
-          "_cid": "rVjKAB2xm3",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
-          "_name": "image09",
-          "_styles": {
-            "background": "@bgColor",
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            ".image-block": {
-              "position": "relative",
-              "height": "400px",
-              "overflow": "hidden",
-              "&:before": {
-                "content": "''",
-                "position": "absolute",
-                "width": "100%",
-                "height": "100%",
-                "background-color": "black",
-                "opacity": "0",
-                "left": "0",
-                "top": "0",
-                "transition": "all 0.3s",
-                "pointer-events": "none",
-                "z-index": "2"
-              },
-              "&:hover": {
-                "&:before": {
-                  "opacity": "0.4"
-                },
-                ".wrap": {
-                  "opacity": "1"
-                },
-                "img": {
-                  "transform": "scale(1.05)"
-                }
-              }
-            },
-            ".row": {
-              "justify-content": "center",
-              "padding": "0.2rem"
-            },
-            "h4": {
-              "letter-spacing": "2px"
-            },
-            "figcaption": {
-              "position": "relative",
-              ".wrap": {
-                "position": "absolute",
-                "bottom": "2rem",
-                "width": "100%",
-                "opacity": "0",
-                "padding": "1rem",
-                "transition": "all 0.3s",
-                "z-index": "3"
-              }
-            },
-            "img": {
-              "width": "100%",
-              "height": "100%",
-              "transition": "all 3s",
-              "object-fit": "cover"
-            },
-            ".col-md-4": {
-              "padding": "0.2rem"
-            },
-            "@media (min-width: 992px)": {
-              ".col-lg-25": {
-                "flex": "0 0 20%",
-                "max-width": "20%",
-                "padding": "0.2rem"
-              },
-              ".image-block": {
-                "height": "500px"
-              }
-            },
-            "@media (max-width: 767px)": {
-              ".image-block": {
-                "&:before": {
-                  "opacity": "0.4"
-                },
-                ".wrap": {
-                  "opacity": "1"
-                }
-              }
-            }
-          },
-          "_customHTML": "<section group=\"Images & Videos\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" value=\"1\" step=\"1\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" value=\"0\" step=\"1\">\n\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container-fluid\">\n        <div class=\"row \">\n            <div class=\"col-lg-25 col-md-4\">\n\n                <div class=\"image-block\">\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-502x335.jpg\" alt=\"Mobirise\" title>\n                    <figcaption class=\"mbr-figure-caption mbr-figure-caption-over\" mbr-if=\"showText\">\n                        <div class=\"wrap\">\n                            <h4 mbr-text class=\"pb-2 mbr-white mbr-bold align-center mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                                LANDSCAPE</h4>\n\n\n                        </div>\n                    </figcaption>\n                </div>\n            </div>\n\n            <div class=\"col-lg-25 col-md-4\">\n                <div class=\"image-block\">\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-502x758.jpg\" alt=\"Mobirise\" title>\n                    <figcaption class=\"mbr-figure-caption mbr-figure-caption-over\" mbr-if=\"showText\">\n                        <div class=\"wrap\">\n                            <h4 mbr-text class=\"pb-2 mbr-white mbr-bold align-center mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                                ARTWORK</h4>\n\n                        </div>\n                    </figcaption>\n                </div>\n\n            </div>\n\n            <div class=\"col-lg-25 col-md-4\">\n                <div class=\"image-block\">\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-502x355.jpg\" alt=\"Mobirise\" title>\n                    <figcaption class=\"mbr-figure-caption mbr-figure-caption-over\" mbr-if=\"showText\">\n                        <div class=\"wrap\">\n                            <h4 mbr-text class=\"pb-2 mbr-white mbr-bold align-center mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                                NATURE</h4>\n\n                        </div>\n                    </figcaption>\n                </div>\n\n            </div>\n\n            <div class=\"col-lg-25 col-md-4\">\n                <div class=\"image-block\">\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-502x314.jpg\" alt=\"Mobirise\" title>\n                    <figcaption class=\"mbr-figure-caption mbr-figure-caption-over\" mbr-if=\"showText\">\n                        <div class=\"wrap\">\n                            <h4 mbr-text class=\"pb-2 mbr-white mbr-bold align-center mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                                ARTWORK</h4>\n\n                        </div>\n                    </figcaption>\n                </div>\n\n            </div>\n\n\n            <div class=\"col-lg-25 col-md-4\">\n                <div class=\"image-block\">\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-502x365.jpg\" alt=\"Mobirise\" title>\n                    <figcaption class=\"mbr-figure-caption mbr-figure-caption-over\" mbr-if=\"showText\">\n                        <div class=\"wrap\">\n                            <h4 mbr-text class=\"pb-2 mbr-white mbr-bold align-center mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                                MOUNTAIN</h4>\n\n                        </div>\n                    </figcaption>\n                </div>\n\n            </div>\n\n\n\n        </div>\n\n    </div>\n\n\n</section>",
-          "_anchor": "image09-a",
-          "_isUserblock": true,
-          "_sourceTheme": "photom4",
-          "_cid": "rVjIZvXhUD",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
           "alias": false,
           "_styles": {
             "padding-top": "(@paddingTop * 15px)",
@@ -1258,97 +1073,6 @@
           "_params": {}
         },
         {
-          "_name": "social01",
-          "_styles": {
-            "& when not (@fullScreen)": {
-              "padding-top": "(@paddingTop * 15px)",
-              "padding-bottom": "(@paddingBottom * 15px)"
-            },
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value",
-              "& when (@gradientBg)": {
-                "background": "linear-gradient(45deg, @bg-value, @color2)"
-              }
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            "img": {
-              "width": "100%",
-              "height": "130px",
-              "object-fit": "cover"
-            },
-            ".img-wrap span": {
-              "position": "absolute",
-              "top": "50%",
-              "left": "50%",
-              "transform": "translate(-50%, -50%)",
-              "color": "@icons",
-              "opacity": "0",
-              "transition": "all 0.3s",
-              "cursor": "pointer"
-            },
-            ".img-wrap": {
-              "overflow": "hidden",
-              "display": "flex",
-              "justify-content": "center",
-              "position": "relative",
-              "&:before": {
-                "content": "''",
-                "position": "absolute",
-                "transition": "all 0.3s",
-                "pointer-events": "none",
-                "width": "100%",
-                "height": "100%",
-                "left": "0",
-                "top": "0",
-                "background": "black",
-                "opacity": "0"
-              },
-              "&:hover": {
-                "&:before": {
-                  "opacity": "0.2"
-                },
-                "span": {
-                  "opacity": "1"
-                }
-              }
-            },
-            "@media (min-width: 992px)": {
-              ".col-lg-x": {
-                "flex": "0 0 12.5%",
-                "max-width": "12.5%"
-              }
-            },
-            ".item": {
-              "padding": "0.5rem"
-            },
-            "@media (max-width: 767px)": {
-              ".item": {
-                "padding": "0.5rem"
-              },
-              ".row": {
-                "padding": "0 0.5rem"
-              }
-            },
-            ".btn": {
-              "border-radius": "0"
-            },
-            ".mbr-iconfont": {
-              "font-size": "1rem!important"
-            }
-          },
-          "_customHTML": "<section class=\"header3\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"3\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"3\" condition=\"fullScreen == false\">\n        <input type=\"color\" name=\"icons\" title=\"Icons Color\" value=\"#ffffff\" selected>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/background1.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#767676\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n\n        <input type=\"checkbox\" title=\"Gradient\" name=\"gradientBg\" condition=\"bg.type == 'color'\">\n        <input type=\"color\" title=\"Color 2\" name=\"color2\" value=\"#000000\" condition=\"gradientBg && bg.type == 'color'\">\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-center pb-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-sm btn-black\" href=\"https://mobirise.co\" data-app-placeholder=\"Type Text\"><span class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>FOLLOW US</a></div>\n        <div class=\"row mbr-jc-c\">\n\n\n\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-8-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-9-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-10-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-11-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-12-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-254x107.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-254x191.png\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-13-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-254x122.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-254x391.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-254x163.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-18-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-17-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-16-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-15-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-14-254x169.jpg\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n\n        </div>\n    </div>\n\n</section>",
-          "_anchor": "social01-d",
-          "_isUserblock": true,
-          "_sourceTheme": "photom4",
-          "_cid": "rVjV4WW8bN",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
           "_name": "video2",
           "_styles": {
             "background": "@bgColor",
@@ -1385,97 +1109,6 @@
           "_isUserblock": true,
           "_sourceTheme": "luxurym4",
           "_cid": "rVjYZuMB1O",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
-          "_name": "social01",
-          "_styles": {
-            "& when not (@fullScreen)": {
-              "padding-top": "(@paddingTop * 15px)",
-              "padding-bottom": "(@paddingBottom * 15px)"
-            },
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value",
-              "& when (@gradientBg)": {
-                "background": "linear-gradient(45deg, @bg-value, @color2)"
-              }
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            "img": {
-              "width": "100%",
-              "height": "130px",
-              "object-fit": "cover"
-            },
-            ".img-wrap span": {
-              "position": "absolute",
-              "top": "50%",
-              "left": "50%",
-              "transform": "translate(-50%, -50%)",
-              "color": "@icons",
-              "opacity": "0",
-              "transition": "all 0.3s",
-              "cursor": "pointer"
-            },
-            ".img-wrap": {
-              "overflow": "hidden",
-              "display": "flex",
-              "justify-content": "center",
-              "position": "relative",
-              "&:before": {
-                "content": "''",
-                "position": "absolute",
-                "transition": "all 0.3s",
-                "pointer-events": "none",
-                "width": "100%",
-                "height": "100%",
-                "left": "0",
-                "top": "0",
-                "background": "black",
-                "opacity": "0"
-              },
-              "&:hover": {
-                "&:before": {
-                  "opacity": "0.2"
-                },
-                "span": {
-                  "opacity": "1"
-                }
-              }
-            },
-            "@media (min-width: 992px)": {
-              ".col-lg-x": {
-                "flex": "0 0 12.5%",
-                "max-width": "12.5%"
-              }
-            },
-            ".item": {
-              "padding": "0.5rem"
-            },
-            "@media (max-width: 767px)": {
-              ".item": {
-                "padding": "0.5rem"
-              },
-              ".row": {
-                "padding": "0 0.5rem"
-              }
-            },
-            ".btn": {
-              "border-radius": "0"
-            },
-            ".mbr-iconfont": {
-              "font-size": "1rem!important"
-            }
-          },
-          "_customHTML": "<section class=\"header3\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"3\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"3\" condition=\"fullScreen == false\">\n        <input type=\"color\" name=\"icons\" title=\"Icons Color\" value=\"#ffffff\" selected>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/background1.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#767676\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n\n        <input type=\"checkbox\" title=\"Gradient\" name=\"gradientBg\" condition=\"bg.type == 'color'\">\n        <input type=\"color\" title=\"Color 2\" name=\"color2\" value=\"#000000\" condition=\"gradientBg && bg.type == 'color'\">\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-center pb-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-sm btn-black\" href=\"https://mobirise.co\" data-app-placeholder=\"Type Text\"><span class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>FOLLOW US</a></div>\n        <div class=\"row mbr-jc-c\">\n\n\n\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/01.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/02.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/03.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/04.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/background1.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/background2.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/background3.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/thumb-mbr-1861482-104x180.png\" alt=\"Mobirise\" title>\n                </div>\n            </div>\n\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/background5-1.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/background4.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/background3.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/background2.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/04.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/03.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/02.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n            <div class=\"item col-6 col-md-3 col-lg-x\">\n                <div class=\"img-wrap\">\n                    <span mbr-icon class=\"socicon socicon-instagram mbr-iconfont mbr-iconfont-btn\"></span>\n                    <img src=\"@PROJECT_PATH@/assets/images/01.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n\n        </div>\n    </div>\n\n</section>",
-          "_anchor": "social01-e",
-          "_isUserblock": true,
-          "_sourceTheme": "photom4",
-          "_cid": "rVjV5gWSFI",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
@@ -2222,7 +1855,7 @@
             }
           },
           "_name": "shop1",
-          "_customHTML": "<section class=\"mbr-gallery\" group=\"Shops\" plugins=\"mobirise-shop,Gallery\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"range\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"0\" inline=\"\">\n        <input type=\"range\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"2\" inline=\"\">\n        <header>Color</header>\n        <input type=\"color\" title=\"On Sale Bg\" name=\"saleBg\" value=\"#132c70\">\n        <input type=\"color\" title=\"Card Bottom Color\" name=\"cardBottom\" value=\"#ffffff\">\n        <input type=\"color\" title=\"Sidebar Bg\" name=\"sidebarBg\" value=\"#ffffff\">\n\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#cccccc\">\n\n        <input type=\"shop\" title=\"Shop\" name=\"shop\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <!-- <div class=\"big-container\"> -->\n    <div class=\"container-fluid\">\n        <div mbr-shop=\"shop\" class=\"mbr-shop\" mbr-shop-minimal=\"\"></div>\n    </div>\n\n</section>",
+          "_customHTML": "<section class=\"mbr-gallery\" group=\"Shops\" plugins=\"mobirise-shop,Gallery\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"range\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"4\" inline>\n        <input type=\"range\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"4\" inline>\n        <header>Color</header>\n        <input type=\"color\" title=\"On Sale Bg\" name=\"saleBg\" value=\"#132c70\">\n        <input type=\"color\" title=\"Card Bottom Color\" name=\"cardBottom\" value=\"#ffffff\">\n        <input type=\"color\" title=\"Sidebar Bg\" name=\"sidebarBg\" value=\"#ffffff\">\n\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#cccccc\">\n\n        <input type=\"shop\" title=\"Shop\" name=\"shop\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <!-- <div class=\"big-container\"> -->\n    <div class=\"container-fluid\">\n        <div mbr-shop=\"shop\" class=\"mbr-shop\" mbr-shop-minimal></div>\n    </div>\n\n</section>",
           "_anchor": "shop1-g",
           "_isUserblock": true,
           "_sourceTheme": "luxurym4",
@@ -2268,30 +1901,6 @@
             "price_range_reset": "<a class=\"btn btn-sm btn-secondary\" data-app-btn=\"true\" href=\"\">Show all</a>",
             "shop": [
               {
-                "tags": "Creative",
-                "bestSeller": false,
-                "onSale": false,
-                "oldPrice": false,
-                "itemTitle": "Luxury Watch",
-                "itemDescription": "Casual shoes (contact us for sizing)<br><br><ul><li>Lightweight textured fabric</li> <li>Rounded v-neckline</li> <li>Pom pom trims</li> <li>Regular fit – true to size</li></ul> <br>Duis auctor hendrerit nisi, at lacinia ex vulputate quis. Suspendisse convallis iaculis tortor, quis mattis lectus rutrum a.<br><br>Product code: <b>385DDF5p</b>",
-                "itemPriceTitle": "From: ",
-                "itemPrice": "$8800",
-                "oldPriceValue": "$176",
-                "sale": "SALE",
-                "button": "<a data-app-btn=\"true\" class=\"btn btn-primary\" data-app-placeholder=\"Type Text\" href=\"https://mobirise.com\">Buy Now</a>",
-                "buttons": "<a data-app-btn=\"true\" class=\"btn btn-primary\" data-app-placeholder=\"Type Text\" href=\"https://mobirise.com\">Buy Now</a>",
-                "image": "file:///C:/Users/Mobirise123/AppData/Local/Mobirise.com/Mobirise/projects/project-2019-09-24_102717/assets/images/watch4-1920x1281.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/watch4-1920x1281-800x534.jpg",
-                "customStyle5": "display-5",
-                "customStyle7": "display-7",
-                "customStyleSale": "display-4",
-                "customStyleTags": "display-4",
-                "caption": "Type caption here",
-                "active": false,
-                "alt": "",
-                "title": ""
-              },
-              {
                 "tags": "Animated",
                 "bestSeller": false,
                 "onSale": false,
@@ -2302,7 +1911,7 @@
                 "itemPrice": "$6100",
                 "oldPriceValue": "$122",
                 "sale": "SALE",
-                "button": "<a data-app-btn=\"true\" class=\"btn btn-primary\" data-app-placeholder=\"Type Text\" href=\"https://mobirise.com\">Buy Now</a>",
+                "button": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" data-app-placeholder=\"Type Text\" class=\"btn btn-primary display-7\">Buy Now</a>",
                 "buttons": "<a data-app-btn=\"true\" class=\"btn btn-primary\" data-app-placeholder=\"Type Text\" href=\"https://mobirise.com\">Buy Now</a>",
                 "image": "file:///C:/Users/Mobirise123/AppData/Local/Mobirise.com/Mobirise/projects/project-2019-09-24_102717/assets/images/watch5-1920x1280.jpg",
                 "thumb": "@PROJECT_PATH@/assets/images/watch5-1920x1280-800x533.jpg",
@@ -2328,14 +1937,134 @@
                 "sale": "SALE",
                 "button": "<a data-app-btn=\"true\" class=\"btn btn-primary\" data-app-placeholder=\"Type Text\" href=\"https://mobirise.com\">Buy Now</a>",
                 "buttons": "<a data-app-btn=\"true\" class=\"btn btn-primary\" data-app-placeholder=\"Type Text\" href=\"https://mobirise.com\">Buy Now</a>",
-                "image": "file:///C:/Users/Mobirise123/AppData/Local/Mobirise.com/Mobirise/projects/project-2019-09-24_102717/assets/images/watch6-1920x1280.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/watch6-1920x1280-800x533.jpg",
+                "image": "@PROJECT_PATH@/assets/images/ezteem2-941x675-800x574.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/ezteem2-941x675-800x574-800x574.jpg",
                 "customStyle5": "display-5",
                 "customStyle7": "display-7",
                 "customStyleSale": "display-4",
                 "customStyleTags": "display-4",
                 "caption": "Type caption here",
                 "active": true,
+                "alt": "",
+                "title": ""
+              },
+              {
+                "tags": "Creative",
+                "bestSeller": false,
+                "onSale": false,
+                "oldPrice": false,
+                "itemTitle": "Luxury Watch",
+                "itemDescription": "Casual shoes (contact us for sizing)<br><br><ul><li>Lightweight textured fabric</li> <li>Rounded v-neckline</li> <li>Pom pom trims</li> <li>Regular fit – true to size</li></ul> <br>Duis auctor hendrerit nisi, at lacinia ex vulputate quis. Suspendisse convallis iaculis tortor, quis mattis lectus rutrum a.<br><br>Product code: <b>385DDF5p</b>",
+                "itemPriceTitle": "From: ",
+                "itemPrice": "$8800",
+                "oldPriceValue": "$176",
+                "sale": "SALE",
+                "button": "<a data-app-btn=\"true\" class=\"btn btn-primary\" data-app-placeholder=\"Type Text\" href=\"https://mobirise.com\">Buy Now</a>",
+                "buttons": "<a data-app-btn=\"true\" class=\"btn btn-primary\" data-app-placeholder=\"Type Text\" href=\"https://mobirise.com\">Buy Now</a>",
+                "image": "file:///C:/Users/Mobirise123/AppData/Local/Mobirise.com/Mobirise/projects/project-2019-09-24_102717/assets/images/watch4-1920x1281.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/watch4-1920x1281-800x534.jpg",
+                "customStyle5": "display-5",
+                "customStyle7": "display-7",
+                "customStyleSale": "display-4",
+                "customStyleTags": "display-4",
+                "caption": "Type caption here",
+                "active": false,
+                "alt": "",
+                "title": ""
+              },
+              {
+                "tags": "Awesome",
+                "bestSeller": false,
+                "onSale": false,
+                "oldPrice": false,
+                "itemTitle": "Luxury Watch",
+                "itemDescription": "Casual shoes (contact us for sizing)<br><br><ul><li>Lightweight textured fabric</li> <li>Rounded v-neckline</li> <li>Pom pom trims</li> <li>Regular fit – true to size</li></ul> <br>Duis auctor hendrerit nisi, at lacinia ex vulputate quis. Suspendisse convallis iaculis tortor, quis mattis lectus rutrum a.<br><br>Product code: <b>385DDF5p</b>",
+                "itemPriceTitle": "From: ",
+                "itemPrice": "$6300",
+                "oldPriceValue": "$126",
+                "sale": "SALE",
+                "button": "<a data-app-btn=\"true\" class=\"btn btn-primary\" data-app-placeholder=\"Type Text\" href=\"https://mobirise.com\">Buy Now</a>",
+                "buttons": "<a data-app-btn=\"true\" class=\"btn btn-primary\" data-app-placeholder=\"Type Text\" href=\"https://mobirise.com\">Buy Now</a>",
+                "image": "@PROJECT_PATH@/assets/images/ezteem1-869x596.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/ezteem1-869x596-800x549.jpg",
+                "customStyle5": "display-5",
+                "customStyle7": "display-7",
+                "customStyleSale": "display-4",
+                "customStyleTags": "display-4",
+                "caption": "Type caption here",
+                "active": false,
+                "alt": "",
+                "title": ""
+              },
+              {
+                "tags": "Awesome",
+                "bestSeller": false,
+                "onSale": false,
+                "oldPrice": false,
+                "itemTitle": "Luxury Watch",
+                "itemDescription": "Casual shoes (contact us for sizing)<br><br><ul><li>Lightweight textured fabric</li> <li>Rounded v-neckline</li> <li>Pom pom trims</li> <li>Regular fit – true to size</li></ul> <br>Duis auctor hendrerit nisi, at lacinia ex vulputate quis. Suspendisse convallis iaculis tortor, quis mattis lectus rutrum a.<br><br>Product code: <b>385DDF5p</b>",
+                "itemPriceTitle": "From: ",
+                "itemPrice": "$6300",
+                "oldPriceValue": "$126",
+                "sale": "SALE",
+                "button": "<a data-app-btn=\"true\" class=\"btn btn-primary\" data-app-placeholder=\"Type Text\" href=\"https://mobirise.com\">Buy Now</a>",
+                "buttons": "<a data-app-btn=\"true\" class=\"btn btn-primary\" data-app-placeholder=\"Type Text\" href=\"https://mobirise.com\">Buy Now</a>",
+                "image": "@PROJECT_PATH@/assets/images/ezteem-1223x842.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/ezteem-1223x842-800x551.jpg",
+                "customStyle5": "display-5",
+                "customStyle7": "display-7",
+                "customStyleSale": "display-4",
+                "customStyleTags": "display-4",
+                "caption": "Type caption here",
+                "active": false,
+                "alt": "",
+                "title": ""
+              },
+              {
+                "tags": "Awesome",
+                "bestSeller": false,
+                "onSale": false,
+                "oldPrice": false,
+                "itemTitle": "Luxury Watch",
+                "itemDescription": "Casual shoes (contact us for sizing)<br><br><ul><li>Lightweight textured fabric</li> <li>Rounded v-neckline</li> <li>Pom pom trims</li> <li>Regular fit – true to size</li></ul> <br>Duis auctor hendrerit nisi, at lacinia ex vulputate quis. Suspendisse convallis iaculis tortor, quis mattis lectus rutrum a.<br><br>Product code: <b>385DDF5p</b>",
+                "itemPriceTitle": "From: ",
+                "itemPrice": "$6300",
+                "oldPriceValue": "$126",
+                "sale": "SALE",
+                "button": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" data-app-placeholder=\"Type Text\" class=\"btn btn-primary display-7\">Buy Now</a>",
+                "buttons": "<a data-app-btn=\"true\" class=\"btn btn-primary\" data-app-placeholder=\"Type Text\" href=\"https://mobirise.com\">Buy Now</a>",
+                "image": "@PROJECT_PATH@/assets/images/gothic-3166762_960-720-960x710.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/gothic-3166762-960-720-960x710-800x592.jpg",
+                "customStyle5": "display-5",
+                "customStyle7": "display-7",
+                "customStyleSale": "display-4",
+                "customStyleTags": "display-4",
+                "caption": "Type caption here",
+                "active": false,
+                "alt": "",
+                "title": ""
+              },
+              {
+                "tags": "Animated",
+                "bestSeller": false,
+                "onSale": false,
+                "oldPrice": false,
+                "itemTitle": "Luxury Watch",
+                "itemDescription": "Casual shoes (contact us for sizing)<br><br><ul><li>Lightweight textured fabric</li> <li>Rounded v-neckline</li> <li>Pom pom trims</li> <li>Regular fit – true to size</li></ul> <br>Duis auctor hendrerit nisi, at lacinia ex vulputate quis. Suspendisse convallis iaculis tortor, quis mattis lectus rutrum a.<br><br>Product code: <b>385DDF5p</b>",
+                "itemPriceTitle": "From: ",
+                "itemPrice": "$6100",
+                "oldPriceValue": "$122",
+                "sale": "SALE",
+                "button": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" data-app-placeholder=\"Type Text\" class=\"btn btn-primary display-7\">Buy Now</a>",
+                "buttons": "<a data-app-btn=\"true\" class=\"btn btn-primary\" data-app-placeholder=\"Type Text\" href=\"https://mobirise.com\">Buy Now</a>",
+                "image": "@PROJECT_PATH@/assets/images/ezteem2-941x675.jpg",
+                "thumb": "@PROJECT_PATH@/assets/images/ezteem2-941x675-800x574.jpg",
+                "customStyle5": "display-5",
+                "customStyle7": "display-7",
+                "customStyleSale": "display-4",
+                "customStyleTags": "display-4",
+                "caption": "Type caption here",
+                "active": false,
                 "alt": "",
                 "title": ""
               }
@@ -2415,51 +2144,6 @@
           "_global": false,
           "_once": false,
           "_params": {}
-        },
-        {
-          "alias": "mobirise4-blocks/components",
-          "_isSecondary": true,
-          "typeCompatible": "type",
-          "_styles": {
-            "& when not (@fullScreen)": {
-              "padding-top": "(@paddingTop * 15px)",
-              "padding-bottom": "(@paddingBottom * 15px)"
-            },
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            ".slider-text-two": {
-              "background": "fade(@textColor, 80%) none repeat scroll 0 0",
-              "outline": "1px solid fade(contrast(@textColor), 20%)",
-              "outline-offset": "-15px",
-              "padding": "65px 50px"
-            },
-            ".mbr-section-title": {
-              "color": "#232323"
-            },
-            ".mbr-text": {
-              "color": "#232323",
-              "letter-spacing": "5px",
-              "font-weight": "100"
-            },
-            "@media screen and (~'-ms-high-contrast: active'), (~'-ms-high-contrast: none')": {
-              ".slider-text-two": {
-                "outline": "15px solid fade(@textColor, 80%)",
-                "border": "1px solid fade(contrast(@textColor), 20%)"
-              }
-            }
-          },
-          "_name": "extHeader2",
-          "_customHTML": "<section class=\"extHeader\" group=\"Additional Blocks\" data-bg-video=\"{{bg.type == 'video'&amp;&amp;bg.value.url}}\" mbr-class=\"{\n         'mbr-fullscreen': fullScreen,\n         'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" condition=\"fullScreen\">\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n        <input type=\"range\" title=\"Width Text\" name=\"widthText\" min=\"1\" max=\"6\" step=\"1\" value=\"4\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked=\"\">\n        <input type=\"color\" title=\"Bg Text Color\" name=\"textColor\" value=\"#ffffff\">\n        <select title=\"Align\" name=\"alignTitle\" condition=\"showTitle || showSubtitle\">\n            <option value=\"1\">Left</option>\n            <option value=\"2\" selected=\"\">Center</option>\n            <option value=\"3\">Right</option>\n        </select>\n        <fieldset type=\"background\" name=\"bg\" parallax=\"\">\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background1.jpg\" selected=\"\">\n            <input type=\"color\" title=\"Background Color\" value=\"#232323\">\n            <input type=\"video\" title=\"Background Video\" value=\"http://www.youtube.com/watch?v=uNCr7NdOJgw\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#193bba\" condition=\"overlay&amp;&amp;bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay&amp;&amp;bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay&amp;&amp;bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\">\n    </div>\n    <div class=\"container text-center\" data-stellar-background-ratio=\".5\">\n      <div class=\"row slider-wrapper\" mbr-if=\"showTitle || showSubtitle\" mbr-class=\"{'justify-content-center': alignTitle==2, 'justify-content-end': alignTitle==3}\">\n        <div mbr-class=\"{'col-lg-4 col-md-6': widthText == 1, 'col-lg-5 col-md-6': widthText == 2, 'col-md-6': widthText == 3, 'col-lg-8 col-md-6': widthText == 4, 'col-lg-9 col-md-12': widthText == 5, 'col-lg-10 col-md-12': widthText == 6}\">\n            <div class=\"slider-text  slider-text-two\">\n              <h2 mbr-if=\"showTitle\" class=\"mbr-section-title mbr-fonts-style mbr-bold align-center\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\">Beyond the Edge</h2>\n              <h4 class=\"mbr-text mbr-fonts-style align-center\" mbr-if=\"showSubtitle\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\">Lorem ipsum dolor sit amet.</h4><h4>\n            </h4></div>\n        </div>\n      </div>\n    </div>\n    <div mbr-if=\"showArrow &amp;&amp; fullScreen\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
-          "_cid": "rVV3SaisU1",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {},
-          "_anchor": "extHeader2-j"
         },
         {
           "alias": "mobirise4-blocks/components",
@@ -2563,91 +2247,11 @@
           "_name": "extHeader4",
           "_customHTML": "<section group=\"Headers header2\" data-bg-video=\"{{bg.type == 'video' &amp;&amp; bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" condition=\"fullScreen\">\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"15\" step=\"1\" value=\"15\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"15\" step=\"1\" value=\"15\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Scroll Bg\" name=\"scrollBg\" checked=\"\">\n        <input type=\"range\" title=\"Scroll Time\" name=\"scrollTime\" min=\"1\" max=\"60\" step=\"1\" value=\"30\" condition=\"scrollBg &amp;&amp; bg.type == 'image'\" inline=\"\"> \n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background10.jpg\" selected=\"\">\n            <input type=\"color\" title=\"Background Color\" value=\"#dddddd\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"scroll-wrapper\" mbr-style=\"{'animation-duration':scrollTime+'s'}\"></div>\n    <div class=\"scroll-wrapper second\" mbr-if=\"scrollBg\" mbr-style=\"{'animation-duration':scrollTime+'s'}\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\">\n    </div>\n    <div class=\"container text-center block-content\" data-stellar-background-ratio=\".5\">\n      <div class=\"row justify-content-center slider-wrapper\" mbr-if=\"showTitle || showSubtitle\">\n        <div class=\"col-md-10\">\n          <h2 mbr-if=\"showTitle\" class=\"mbr-section-title mbr-fonts-style mbr-bold align-center\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\">HEADER WITH HORIZONTAL SCROLLING BACKGROUND</h2>\n          <h4 class=\"mbr-text mbr-fonts-style align-center mbr-bold\" mbr-if=\"showSubtitle\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-text\">FOR YOUR AMAZING SITE</h4><h4>\n        </h4></div>\n      </div>\n    </div>\n    <div mbr-if=\"showArrow &amp;&amp; fullScreen\" class=\"mbr-arrow hidden-sm-down block-content\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
           "_cid": "rVV3TYU5MD",
+          "_anchor": "extHeader4-k",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {},
-          "_anchor": "extHeader4-k"
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "& when not (@fullScreen)": {
-              "padding-top": "(@paddingTop * 15px)",
-              "padding-bottom": "(@paddingBottom * 15px)"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
-            },
-            ".mbr-section-title": {
-              "font-family": "@display2Font"
-            },
-            ".promo-primary-description": {
-              "position": "absolute",
-              "bottom": "0rem",
-              "width": "100%",
-              "text-align": "right"
-            },
-            ".mbr-section-subtitle": {
-              "margin-bottom": "1rem",
-              "font-family": "@display1Font"
-            },
-            ".container::before": {
-              "content": "\"\"",
-              "display": "block",
-              "height": "2px",
-              "position": "absolute",
-              "bottom": "-35px",
-              "width": "75px",
-              "left": "16px",
-              "background-color": "@lineColor1"
-            },
-            ".container::after": {
-              "content": "\"\"",
-              "display": "block",
-              "height": "2px",
-              "position": "absolute",
-              "width": "25px",
-              "left": "96px",
-              "background-color": "@lineColor2",
-              "bottom": "-35px"
-            },
-            "@media (max-width: 992px)": {
-              ".promo-primary-description": {
-                "padding-right": "2rem"
-              }
-            },
-            "@media (min-width: 1200px)": {
-              ".bottom-title": {
-                "margin-right": "9rem",
-                "font-size": "(@bottomTitleSize * 1px)"
-              }
-            },
-            ".bottom-title": {
-              "letter-spacing": "0px"
-            },
-            ".mbr-section-btn": {
-              "margin-top": "1.8rem"
-            },
-            ".btn-primary-outline": {
-              "color": "#ffffff !important"
-            },
-            ".btn": {
-              "margin-left": "0rem",
-              "margin-right": "1rem"
-            }
-          },
-          "_name": "header2",
-          "_customHTML": "<section group=\"Headers\" data-bg-video=\"{{bg.type == 'video' &amp;&amp; bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"30\" step=\"1\" value=\"18\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"30\" step=\"1\" value=\"18\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline=\"\" title=\"Bottom Title\" name=\"bottomTitleSize\" min=\"0\" max=\"150\" step=\"1\" value=\"200\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Bottom Title\" name=\"bottomTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Button\" name=\"showButtons\">\n        <header>Color</header>\n        <input type=\"color\" title=\"Line 1 Color\" name=\"lineColor1\" value=\"#c1f7d5\">\n        <input type=\"color\" title=\"Line 2 Color\" name=\"lineColor2\" value=\"#aca7ba\">\n        <fieldset type=\"background\" name=\"bg\">\n          <input type=\"image\" title=\"Background Image\" value=\"../_images/square_attorney/attorney1.jpg\" selected=\"\">\n          <input type=\"color\" title=\"Background Color\" value=\"#fafafa\">\n          <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#c1f7d5\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.3\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container align-left\">\n        <div class=\"row\">\n            <div class=\"mbr-black col-md-12 col-lg-12\">\n              <h3 class=\"mbr-section-subtitle mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\" mbr-if=\"showSubTitle\">\n                Fields Of Expertise</h3>\n                <h1 class=\"mbr-section-title mbr-bold mbr-white pb-2 mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">Special Approach, <br> <span class=\"mbr-light\">Dedicated Attorneys</span> </h1>\n                <p class=\"mbr-text mbr-white mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Lorem ipsum dolor sit amet,\n                    consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut\n                    enim ad minim veniam, quis nostru exercitation ullamco laboris.<br></p>\n                <div mbr-buttons=\"\" mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-left\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-primary-outline\" href=\"https://mobirise.co\" data-app-placeholder=\"Type Text\">\n                  FREE CONSULTATION</a>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"promo-primary-description\"> <h2 class=\"bottom-title mbr-fonts-style mbr-primary\" mbr-theme-style=\"display-1\" mbr-if=\"bottomTitle\">\n      Lawyers</h2></div>\n    \n</section>",
-          "_cid": "rVV4bMCctS",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {},
-          "_anchor": "header2-m"
+          "_params": {}
         },
         {
           "alias": "mobirise4-blocks/components",
@@ -2741,11 +2345,11 @@
           "_name": "extHeader35",
           "_customHTML": "<section class=\"extHeader\" group=\"Additional Blocks\" data-bg-video=\"{{bg.type == 'video'&&bg.value.url}}\" plugins=\"PlayerVimeo\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" condition=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n         \n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Show Video PopUp\" name=\"showVideoPopUp\">\n        <input type=\"text\" title=\"Modal Video\" name=\"modalVideo\" value=\"https://www.youtube.com/watch?v=l8UXhtqV6hU\" condition=\"showVideoPopUp\">\n        <input type=\"checkbox\" title=\"Show Description\" name=\"showDescription\" condition=\"showVideoPopUp\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" value=\"@PROJECT_PATH@/assets/images/mcdonald-lake-glacier-national-park-montana.jpg\" title=\"Background Image\" selected>\n            <input type=\"color\" value=\"#232323\" title=\"Background Color\">\n            <input type=\"video\" value=\"https://www.youtube.com/watch?v=l8UXhtqV6hU\" title=\"Background Video\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#1c0b99\" condition=\"overlay&&bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay&&bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay&&bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container align-center\">\n        <div class=\"row justify-content-md-center\">\n            <div class=\"mbr-white col-md-8\">\n                <div class=\"mbr-media show-modal align-center \" mbr-if=\"showVideoPopUp\" data-modal=\".modalWindow\">\n                    <span mbr-icon class=\"mbri-play mbr-iconfont socicon\"></span>\n                </div>\n                <div mbr-text class=\"icon-description align-center font-italic  mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showDescription&&showVideoPopUp\" data-app-selector=\".icon-description, .mbr-media\">\n                    Watch video\n                </div>\n                \n                <h1 class=\"mbr-section-title align-center mbr-white my-4 mbr-bold mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">LEGAL AND BUSINESS SOLUTIONS</h1>\n                <p class=\"mbr-text align-center py-2 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ad soluta qui harum optio, cumque quo. Modi sed, laboriosam fugit incidunt eveniet impedit vitae odio aperiam aliquam distinctio blanditiis dolorum!\n                </p>\n               \n                <div class=\"mbr-section-btn\" mbr-buttons mbr-theme-style=\"display-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n                     <a class=\"btn btn-md btn-white\" href=\"https://mobirise.com\">MORE</a>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div mbr-if=\"showVideoPopUp\">\n        <div class=\"modalWindow\" style=\"display: none;\">\n            <div class=\"modalWindow-container\">\n                <div class=\"modalWindow-video-container\">\n                    <div class=\"modalWindow-video\">\n                        <iframe width=\"100%\" height=\"100%\" data-src=\"{{modalVideo}}\" frameborder=\"0\" allowfullscreen=\"1\"></iframe>\n                    </div>\n                    <a class=\"close\" role=\"button\" data-dismiss=\"modal\">\n                        <span aria-hidden=\"true\" class=\"mbri-close mbr-iconfont closeModal\"></span>\n                        <span class=\"sr-only\">Close</span>\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div mbr-if=\"showArrow && fullScreen\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-arrow-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
           "_cid": "rVV44vjzgT",
+          "_anchor": "extHeader35-l",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {},
-          "_anchor": "extHeader35-l"
+          "_params": {}
         }
       ]
     }
